@@ -1,0 +1,124 @@
+body,
+html {
+  height: 100%;
+}
+
+.page {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  // position: relative;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.main {
+  position: relative;
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dis-scroll {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  overscroll-behavior: none;
+}
+
+.btn {
+  position: relative;
+  border-radius: 23px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 23px;
+
+  font-family: var(--third-family);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--white);
+  background: var(--violet);
+  z-index: 1;
+}
+
+.img-box {
+  position: relative;
+  width: 385px;
+  height: 365px;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 2px;
+    z-index: -1;
+    border-radius: 23px;
+    width: 100%;
+    height: 100%;
+    background: var(--violet);
+    transform: rotate(-3deg);
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -115px;
+    left: -71px;
+    background-image: url("../img/mask-effect.png");
+    width: 321px;
+    height: 346px;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 23px;
+    overflow: hidden;
+  }
+}
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}

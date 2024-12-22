@@ -1,0 +1,64 @@
+<div class="graph-modal">
+  <div
+    class="graph-modal__container"
+    role="dialog"
+    aria-modal="true"
+    data-graph-target="consult"
+  >
+    <button
+      class="btn-reset js-modal-close graph-modal__close"
+      aria-label="Закрыть модальное окно"
+    ></button>
+    <div class="graph-modal__content">
+      <div class="modal-window">
+        <div class="modal-window__top">
+          <h2 class="modal-window__title">
+            Оставьте ваши данные и мы ответим на ваши вопросы
+          </h2>
+          <div class="modal-window__image">
+            <img
+              src="./img/modal-img.jpg"
+              alt="Фотография с людьми"
+              class="modal-window__img"
+            />
+          </div>
+        </div>
+        <div class="modal-window__content">
+          <form action="#" method="post" class="modal-window__form modal-form">
+            <label class="form-label">
+              Ваше имя
+              <input
+                type="text"
+                class="input-reset form-input"
+                placeholder="Ваше имя"
+              />
+            </label>
+            <label class="form-label">
+              E-mail
+              <input
+                type="email"
+                class="input-reset form-input"
+                placeholder="E-mail"
+              />
+            </label>
+            <label class="form-label">
+              Телефон
+              <input
+                type="tel"
+                class="input-reset form-input"
+                placeholder="+7 (999) 999-99-99"
+              />
+            </label>
+            <button class="modal-form__btn btn-reset btn">Сохранить</button>
+          </form>
+          <span class="modal-window__conf">
+            Нажимая на кнопку, Вы даете согласие на обработку персональных данных и соглашаетесь с
+            <a href="#" class="modal-window__conf-link"
+              >политикой конфиденциальность</a
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

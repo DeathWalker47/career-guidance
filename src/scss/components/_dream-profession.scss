@@ -1,0 +1,209 @@
+.dream-profession {
+  border-radius: 23px;
+  background-color: rgba(239, 239, 239, 0.8);
+  padding-top: 55px;
+  padding-bottom: 80px;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+  }
+  &__container-content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 46px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  &__tag {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--text);
+    padding-top: 15px;
+  }
+  &__items {
+    position: relative;
+    display: flex;
+    gap: 21px;
+    justify-content: flex-end;
+    margin-bottom: 122px;
+    &::before {
+      position: absolute;
+      content: "";
+      bottom: 3px;
+      left: 62px;
+      background-image: url("../img/icon-bulb.svg");
+      width: 47px;
+      height: 65px;
+      background-repeat: no-repeat;
+    }
+  }
+  &__item {
+    width: 285px;
+    padding-top: 22px;
+    border-radius: 23px;
+    padding-left: 17px;
+    padding-right: 5px;
+    padding-bottom: 6px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  &__item--one {
+    position: relative;
+    background-color: #87dbd1;
+    padding-right: 30px;
+    h3 {
+      &::before {
+        background-image: url("../img/icon-one.svg");
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      top: -2%;
+      left: -31%;
+      width: 550px;
+      height: 223px;
+      background-image: url("../img/icon-recom-back.svg");
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+    p {
+      color: var(--text);
+    }
+  }
+  &__item-title {
+    position: relative;
+    margin-bottom: 20px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--white);
+    padding-left: 27px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+    }
+  }
+  &__item-text {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--white);
+  }
+  &__item--two {
+    background-color: var(--pink);
+    h3 {
+      &::before {
+        background-image: url("../img/icon-two.svg");
+      }
+    }
+  }
+  &__item--three {
+    position: relative;
+    background-color: #8d86d5;
+    padding-right: 20px;
+    h3 {
+      &::before {
+        background-image: url("../img/icon-three.svg");
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      top: 25%;
+      left: -8%;
+      width: 330px;
+      height: 165px;
+      background-image: url("../img/icon-dream-back.svg");
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+  &__content {
+  }
+  &__content-tag {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    color: var(--text);
+  }
+  &__content-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -18%;
+      right: 7%;
+      background-repeat: no-repeat;
+      width: 330px;
+      height: 184px;
+      background-image: url("../img/icon-circle-line.svg");
+    }
+  }
+  &__content-descr {
+    max-width: 765px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    margin-top: 35px;
+  }
+  &__content-text {
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--text);
+    max-width: 449px;
+  }
+  &__content-text--right {
+    margin-left: auto;
+    margin-bottom: 37px;
+    max-width: 442px;
+  }
+  &__btn {
+    position: relative;
+    width: 285px;
+    span {
+      position: relative;
+      padding-left: 47px;
+      display: inline-block;
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        background-image: url("../img/icon-consultation.svg");
+        width: 30px;
+        height: 26px;
+      }
+    }
+  }
+  &__content-image {
+    margin-top: -93px;
+  }
+  &__content-img {
+  }
+}

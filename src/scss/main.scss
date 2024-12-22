@@ -1,0 +1,29 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+@import "mixins";
+
+//Большие компоненты страницы
+@import "./components/header";
+@import "./components/hero";
+@import "./components/recommendations";
+@import "./components/programm-list";
+@import "./components/bonus";
+@import "./components/footer";
+@import "./components/teenagers";
+@import "./components/career-guidance";
+@import "./components/dream-profession";
+@import "./components/help-yourself";
+@import "./components/interests";
+@import "./components/search-yourself";
+@import "./components/auth-form";
+@import "./components/profile";
+@import "./components/modal";
+@import "./components/cours";
+
+//Маленькие компоненты
+// @import "./components/";
+
+@import "media";

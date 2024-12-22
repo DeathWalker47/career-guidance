@@ -1,0 +1,157 @@
+.hero {
+  padding-top: 80px;
+  &__home {
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--text);
+    display: none;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    transform: translateY(-80px);
+    align-items: flex-end;
+  }
+  &__left {
+    margin-left: auto;
+    margin-right: 88px;
+  }
+  &__title {
+    position: relative;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 46px;
+    color: var(--violet);
+    // margin-bottom: 177px;
+    margin-top: 20px;
+    margin-left: 10px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -8px;
+      left: -11px;
+      height: 76px;
+      width: 697px;
+      border-radius: 23px;
+      background-color: #87dbd1;
+      background-image: url("../img/icon-title-back.svg");
+      background-position: 100% 21%;
+      padding: 9px 60px 14px 15px;
+      transform: rotate(-1deg);
+      z-index: -1;
+    }
+  }
+  &__content {
+    position: relative;
+    // width: 455px;
+    max-width: 465px;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding-left: 26px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -123px;
+      right: -66px;
+      background-image: url("../img/icon-arrow.svg");
+      width: 172px;
+      height: 146px;
+    }
+  }
+  &__subtitle {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 22px;
+    width: 365px;
+  }
+  &__text {
+    position: relative;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 120%;
+    color: #000;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: -30px;
+      background-image: url("../img/icon-info.svg");
+      width: 22px;
+      height: 22px;
+      background-repeat: no-repeat;
+    }
+  }
+  &__right {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      top: -20px;
+      transform: translateX(-50%);
+      right: 34%;
+      background-image: url("../img/icon-book.svg");
+      width: 55px;
+      height: 50px;
+      z-index: 2;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 23%;
+      right: 22px;
+      background-image: url("../img/icon-img-1.svg");
+      width: 58px;
+      height: 32px;
+      z-index: 2;
+    }
+  }
+  &__image {
+    position: relative;
+
+    margin-bottom: 35px;
+    max-width: 460px;
+    height: 424px;
+    z-index: 1;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100%;
+      top: 2px;
+      left: -6px;
+      z-index: -1;
+      border-radius: 23px;
+      max-width: 468px;
+      height: 429px;
+      background: var(--violet);
+      transform: rotate(-2deg);
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -115px;
+      left: -71px;
+      background-image: url("../img/mask-effect.png");
+      width: 321px;
+      height: 346px;
+    }
+  }
+  &__img {
+    border-radius: 23px;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__btn {
+    width: 100%;
+  }
+}
