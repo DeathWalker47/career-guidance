@@ -8,9 +8,12 @@ import { enableScroll } from "../functions/enable-scroll";
 const modal = new GraphModal();
 const tabsElem = document.querySelector("[data-tabs]");
 if (tabsElem) {
-  const tabs = new GraphTabs("cours-tabs");
+  const tabs = new GraphTabs("cours-tabs", {
+    isChanged: (tabs) => {
+      updateTableScroll();
+    },
+  });
 }
-
 // Добавление элемента при уменьшении экрана в другой элемент
 new TransferElements({
   sourceElement: document.querySelector(".autorization"),
@@ -62,36 +65,6 @@ function observeDropdown() {
 }
 
 observeDropdown();
-
-// Создание кнопки Закрыть или удалить в таблице Какой я
-function addButtonsToCells() {
-  let btnDelete = `
-   <button class="btn-reset delete-btn">
-      <svg
-        width="11"
-        height="12"
-        viewBox="0 0 11 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5.33728 6.09485L0.83728 1.59485M5.33728 6.09485L9.83728 10.5948M5.33728 6.09485L9.83728 1.59485M5.33728 6.09485L0.83728 10.5948"
-          stroke="#D165BC"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-  `;
-  const cells = document.querySelectorAll(".results-table td");
-  cells.forEach((cell) => {
-    if (cell.textContent.trim() !== "") {
-      cell.innerHTML += btnDelete;
-    }
-  });
-}
-window.addEventListener("load", addButtonsToCells);
 
 // подстраивание строки под размер текста textarea
 document.querySelectorAll(".reference-table__textarea")?.forEach((textarea) => {
@@ -186,3 +159,14 @@ form?.addEventListener("submit", function (event) {
     });
   });
 });
+function updateTableScroll() {
+  document.querySelectorAll(".results-table td").forEach((td) => {
+    const p = td.querySelector("p");
+    const tdWidth = td.scrollWidth;
+    const pWidth = p.scrollWidth; // Получаем ширину текста
+    // Проверяем, нужно ли добавлять прокрутку
+    if (pWidth > tdWidth) {
+      td.style.overflowX = "auto"; // Включаем прокрутку, если текст превышает ширину ячейки
+    }
+  });
+}

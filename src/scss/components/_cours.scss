@@ -3,7 +3,7 @@
 }
 .tabs {
   padding-top: 77px;
-  padding-bottom: 85px;
+  padding-bottom: 45px;
   &__nav {
     gap: 10px;
     flex-wrap: wrap;
@@ -39,9 +39,11 @@
 }
 
 .cours-tab {
-  margin-bottom: 55px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow-y: hidden;
   &__title {
-    margin-bottom: 38px;
+    padding-bottom: 38px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -262,7 +264,7 @@
 }
 .table-box {
   overflow: auto;
-
+  margin-bottom: 35px;
   &__head-item {
     // text-align: center;
     word-wrap: break-word;
@@ -294,33 +296,6 @@
         background-image: url("../img/desh-line.svg");
       }
     }
-    // &:nth-child(1) {
-    //   max-width: 195px;
-    // }
-    // &:nth-child(2) {
-    //   width: 95px;
-    // }
-    // &:nth-child(3) {
-    //   width: 135px;
-    // }
-    // &:nth-child(4) {
-    //   width: 115px;
-    // }
-    // &:nth-child(5) {
-    //   width: 110px;
-    // }
-    // &:nth-child(6) {
-    //   width: 140px;
-    // }
-    // &:nth-child(7) {
-    //   width: 150px;
-    // }
-    // &:nth-child(8) {
-    //   width: 140px;
-    // }
-    // &:nth-child(9) {
-    //   width: 120px;
-    // }
   }
 }
 
@@ -337,7 +312,7 @@ table {
 td {
   text-align: left;
   // padding: 9px;
-  padding: 6px 0 3px 9px;
+  padding: 5px;
   border: 1px solid #55545a;
   background-color: #fff;
   font-family: var(--font-family);
@@ -347,44 +322,22 @@ td {
   color: #675dd2;
   vertical-align: top;
   height: 100px;
-
-  overflow-x: auto;
-  min-width: 80px;
-  p {
-    min-width: 140px;
-  }
 }
 
 .results-table {
   table-layout: fixed;
   tr {
-    // td:nth-child(1) {
-    //   max-width: 195px;
-    // }
-    // td:nth-child(2) {
-    //   width: 95px;
-    // }
-    // td:nth-child(3) {
-    //   width: 135px;
-    // }
-    // td:nth-child(4) {
-    //   width: 115px;
-    // }
-    // td:nth-child(5) {
-    //   width: 110px;
-    // }
-    // td:nth-child(6) {
-    //   width: 140px;
-    // }
-    // td:nth-child(7) {
-    //   width: 150px;
-    // }
-    // td:nth-child(8) {
-    //   width: 140px;
-    // }
-    // td:nth-child(9) {
-    //   width: 120px;
-    // }
+  }
+  td {
+    overflow-x: hidden;
+    min-width: 80px;
+    p {
+      max-width: 140px;
+
+      display: inline-block; /* Устанавливаем элемент как блочный для управления шириной */
+      max-width: 100%; /* Ограничиваем максимальную ширину до 100% родителя */
+      overflow: hidden; /* Скрываем переполнение */
+    }
   }
 }
 
@@ -501,4 +454,8 @@ td {
     font-size: 20px;
     color: var(--pink);
   }
+}
+.delete-btn {
+  padding-left: 3px;
+  vertical-align: middle;
 }
