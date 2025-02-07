@@ -9,9 +9,9 @@ const modal = new GraphModal();
 const tabsElem = document.querySelector("[data-tabs]");
 if (tabsElem) {
   const tabs = new GraphTabs("cours-tabs", {
-    isChanged: (tabs) => {
-      updateTableScroll();
-    },
+    // isChanged: (tabs) => {
+    //   updateTableScroll();
+    // },
   });
 }
 // Добавление элемента при уменьшении экрана в другой элемент
@@ -73,9 +73,15 @@ document.querySelectorAll(".reference-table__textarea")?.forEach((textarea) => {
     this.style.height = this.scrollHeight + "px";
   });
 });
+document.querySelectorAll(".table-textarea")?.forEach((ta) => {
+  ta.addEventListener("input", function () {
+    this.style.height = "";
+    this.style.height = this.scrollHeight + "px";
+  });
+});
 
 // Запрещается все, кроме цифр в инпут
-document.querySelectorAll(".input-no-text").forEach((el) => {
+document.querySelectorAll(".input-no-text")?.forEach((el) => {
   el.addEventListener("keydown", function (event) {
     if (
       event.keyCode == 46 ||
@@ -99,7 +105,7 @@ document.querySelectorAll(".input-no-text").forEach((el) => {
 });
 
 const input = document.querySelectorAll(".reference-table__input-num");
-input.forEach((el) => {
+input?.forEach((el) => {
   el.addEventListener("input", (elem) => {
     let value = elem.currentTarget.value;
 
@@ -159,14 +165,26 @@ form?.addEventListener("submit", function (event) {
     });
   });
 });
-function updateTableScroll() {
-  document.querySelectorAll(".results-table td").forEach((td) => {
-    const p = td.querySelector("p");
-    const tdWidth = td.scrollWidth;
-    const pWidth = p.scrollWidth; // Получаем ширину текста
-    // Проверяем, нужно ли добавлять прокрутку
-    if (pWidth > tdWidth) {
-      td.style.overflowX = "auto"; // Включаем прокрутку, если текст превышает ширину ячейки
+
+document.querySelectorAll(".table-box")?.forEach((tableBox) => {
+  const headers = tableBox.querySelectorAll(".table-box__head-item");
+
+  headers?.forEach((el, index) => {
+    if (el.dataset.px) {
+      el.style.width = `${el.dataset.px}px`;
+      el.style.flex = "none";
+      let table = tableBox.querySelector(".results-table");
+      let td = table.querySelectorAll("tr td")[index];
+      td.style.width = el.dataset.px + "px";
     }
   });
+});
+
+// Изменения контейнеров таблиц и подстраивание под ее ширину
+let widthTable = document.querySelector(".results-table").offsetWidth;
+if (widthTable > 1200) {
+  let containerTable = document.querySelector(".results-table").parentElement;
+  let containerItems = containerTable.previousElementSibling;
+  containerTable.style.width = widthTable + 2 + "px";
+  containerItems.style.width = widthTable + 2 + "px";
 }
